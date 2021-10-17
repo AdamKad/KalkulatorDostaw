@@ -118,33 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DeliveryByBike" xml:space="preserve">
-    <value>Dowóz będzie rowerem.</value>
+    <value>Transport will be by bike.</value>
   </data>
   <data name="DeliveryByCar" xml:space="preserve">
-    <value>Dowóz będzie samochodem.</value>
+    <value>Transport will be by car.</value>
   </data>
   <data name="DeliveryOnFoot" xml:space="preserve">
-    <value>Dowóz będzie pieszo.</value>
+    <value>Delivery will be on foot.</value>
   </data>
   <data name="EstimatedTime" xml:space="preserve">
-    <value>Szacowany czas to {czas} minut.</value>
+    <value>Estimated time is {time} minutes.</value>
   </data>
   <data name="SetActualWeather" xml:space="preserve">
-    <value>Podaj aktualną pogodę: 1-słońce, 2-deszcz, 3-śnieg</value>
+    <value>Specify the current weather: 1-sunshine, 2-rain, 3-snow</value>
   </data>
   <data name="SetDistance" xml:space="preserve">
-    <value>Podaj dystans (0-10km).</value>
+    <value>Specify the distance (0-10km).</value>
   </data>
   <data name="SetVehicle" xml:space="preserve">
-    <value>Podaj wybrany rodzaj transportu: 1-na pieszo, 2-rower, 3-samochód</value>
+    <value>Specify the method of transport: 1-on foot, 2-bike, 3-car</value>
   </data>
   <data name="WrongDistance" xml:space="preserve">
-    <value>Podałeś błędnie dystans. Wpisz wartość od 0 do 10 (dozwolone są dwa miejsca po przecinku).</value>
+    <value>You have entered the distance incorrectly. Enter a value from 0 to 10 (two decimal places are allowed).</value>
   </data>
   <data name="WrongVehicle" xml:space="preserve">
-    <value>Podałeś błędnie rodzaj transportu. Wpisz 1, 2 lub 3.</value>
+    <value>You have entered the vehicle incorrectly. Enter 1, 2 or 3.</value>
   </data>
   <data name="WrongWeather" xml:space="preserve">
-    <value>Podałeś błędnie pogodę. Wpisz 1, 2 lub 3.</value>
+    <value>You have entered the weather incorrectly. Enter 1, 2 or 3.</value>
   </data>
 </root>

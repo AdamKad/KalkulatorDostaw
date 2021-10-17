@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalkulatorDostaw", "KalkulatorDostaw\KalkulatorDostaw.csproj", "{F614B2FB-FEB1-4BFD-A2E6-E9EFE8288E9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryCalculator", "DeliveryCalculator\DeliveryCalculator.csproj", "{F614B2FB-FEB1-4BFD-A2E6-E9EFE8288E9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

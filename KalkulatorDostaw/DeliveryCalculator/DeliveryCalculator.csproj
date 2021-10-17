@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F614B2FB-FEB1-4BFD-A2E6-E9EFE8288E9E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KalkulatorDostaw</RootNamespace>
-    <AssemblyName>KalkulatorDostaw</AssemblyName>
+    <RootNamespace>DeliveryCalculator</RootNamespace>
+    <AssemblyName>DeliveryCalculator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

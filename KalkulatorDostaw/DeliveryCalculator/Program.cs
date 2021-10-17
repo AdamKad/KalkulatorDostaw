@@ -5,43 +5,42 @@ using System.Text;
 using System.Globalization;
 using System.Threading;
 
-namespace KalkulatorDostaw
+namespace DeliveryCalculator
 {
     class Program
     {
-
-        static int pogoda = 0;
-        static int pojazd = 0;
-        static double dystans = 0;
-        static int czas = 0;
+        static int weather = 0;
+        static int vehicle = 0;
+        static double distance = 0;
+        static int time = 0;
 
         static void Main(string[] args)
         {
             Console.WriteLine(Properties.Language.SetActualWeather);
-            Int32.TryParse(Console.ReadLine(), out pogoda);
+            Int32.TryParse(Console.ReadLine(), out weather);
 
             do
             {
                 Console.WriteLine(Properties.Language.SetVehicle);
-                Int32.TryParse(Console.ReadLine(), out pojazd);
+                Int32.TryParse(Console.ReadLine(), out vehicle);
             }
-            while (pojazd < 1 || pojazd > 3);
+            while (vehicle < 1 || vehicle > 3);
 
-            if (pojazd < 1 || pojazd > 3)
+            if (vehicle < 1 || vehicle > 3)
             {
                 Console.WriteLine(Properties.Language.WrongVehicle);
             }
 
             Console.WriteLine(Properties.Language.SetDistance);
-            Double.TryParse(Console.ReadLine(), out dystans);
+            Double.TryParse(Console.ReadLine(), out distance);
 
-            if (pogoda == 1)
+            if (weather == 1)
             {
-                if (dystans < 0.5)
+                if (distance < 0.5)
                 {
                     Console.WriteLine(Properties.Language.DeliveryOnFoot);
                 }
-                else if (dystans >= 0.5 && dystans < 5)
+                else if (distance >= 0.5 && distance < 5)
                 {
                     Console.WriteLine(Properties.Language.DeliveryByBike);
                 }
@@ -50,9 +49,9 @@ namespace KalkulatorDostaw
                     Console.WriteLine(Properties.Language.DeliveryByCar);
                 }
             }
-            else if (pogoda == 2)
+            else if (weather == 2)
             {
-                if (dystans <= 1.9)
+                if (distance <= 1.9)
                 {
                     Console.WriteLine(Properties.Language.DeliveryByBike);
                 }
@@ -62,7 +61,7 @@ namespace KalkulatorDostaw
                 }
 
             }
-            else if (pogoda == 3)
+            else if (weather == 3)
             {
                 Console.WriteLine(Properties.Language.DeliveryByCar);
             }
@@ -73,23 +72,23 @@ namespace KalkulatorDostaw
 
             double mnoznik = 1;
 
-            if (pogoda == 2) mnoznik = 1.5;
-            else if (pogoda == 3) mnoznik = 2.2;
+            if (weather == 2) mnoznik = 1.5;
+            else if (weather == 3) mnoznik = 2.2;
 
 
-            if (pojazd == 3)
+            if (vehicle == 3)
             {
-                czas = (int)(dystans / 50 * 60 * mnoznik);
+                time = (int)(distance / 50 * 60 * mnoznik);
                 Console.WriteLine(Properties.Language.EstimatedTime);
             }
-            else if (pojazd == 2)
+            else if (vehicle == 2)
             {
-                czas = (int)(dystans / 15 * 60 * mnoznik);
+                time = (int)(distance / 15 * 60 * mnoznik);
                 Console.WriteLine(Properties.Language.EstimatedTime);
             }
-            else if (pojazd == 1)
+            else if (vehicle == 1)
             {
-                czas = (int)(dystans / 5 * 60 * mnoznik);
+                time = (int)(distance / 5 * 60 * mnoznik);
                 Console.WriteLine(Properties.Language.EstimatedTime);
             }
             else

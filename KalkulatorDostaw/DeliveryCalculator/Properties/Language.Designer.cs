@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KalkulatorDostaw.Properties {
+namespace DeliveryCalculator.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KalkulatorDostaw.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KalkulatorDostaw.Properties.Language", typeof(Language).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DeliveryCalculator.Properties.Language", typeof(Language).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -88,7 +88,7 @@ namespace KalkulatorDostaw.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Estimated time is {czas} minutes..
+        ///   Looks up a localized string similar to Estimated time is {time} minutes..
         /// </summary>
         internal static string EstimatedTime {
             get {
