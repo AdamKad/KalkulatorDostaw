@@ -37,40 +37,25 @@ namespace DeliveryCalculator
             }
             while (distance < 0 || distance > 10);
 
-            if (weather == 1)
+            switch (weather)
             {
-                if (distance < 0.5)
-                {
-                    Console.WriteLine(Properties.Language.DeliveryOnFoot);
-                }
-                else if (distance >= 0.5 && distance < 5)
-                {
-                    Console.WriteLine(Properties.Language.DeliveryByBike);
-                }
-                else
-                {
+                case 1:
+                    if (distance < 0.5)
+                        Console.WriteLine(Properties.Language.DeliveryOnFoot);
+                    else if (distance >= 0.5 && distance < 5)
+                        Console.WriteLine(Properties.Language.DeliveryByBike);
+                    else
+                        Console.WriteLine(Properties.Language.DeliveryByCar);
+                    break;
+                case 2:
+                    if (distance <= 1.9)
+                        Console.WriteLine(Properties.Language.DeliveryByBike);
+                    else
+                        Console.WriteLine(Properties.Language.DeliveryByCar);
+                    break;
+                case 3:
                     Console.WriteLine(Properties.Language.DeliveryByCar);
-                }
-            }
-            else if (weather == 2)
-            {
-                if (distance <= 1.9)
-                {
-                    Console.WriteLine(Properties.Language.DeliveryByBike);
-                }
-                else
-                {
-                    Console.WriteLine(Properties.Language.DeliveryByCar);
-                }
-
-            }
-            else if (weather == 3)
-            {
-                Console.WriteLine(Properties.Language.DeliveryByCar);
-            }
-            else
-            {
-                Console.WriteLine(Properties.Language.WrongWeather);
+                    break;
             }
 
             double multiplier = 1;
@@ -78,30 +63,21 @@ namespace DeliveryCalculator
             if (weather == 2) multiplier = 1.5;
             else if (weather == 3) multiplier = 2.2;
 
-
-            if (vehicle == 3)
+            switch (vehicle)
             {
-                time = (int)(distance / 50 * 60 * multiplier);
-                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
-            }
-            else if (vehicle == 2)
-            {
-                time = (int)(distance / 15 * 60 * multiplier);
-                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
-            }
-            else if (vehicle == 1)
-            {
-                time = (int)(distance / 5 * 60 * multiplier);
-                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
-            }
-            else
-            {
-                Console.WriteLine(Properties.Language.WrongVehicle);
+                case 1:
+                    time = (int)(distance / 5 * 60 * multiplier);
+                    break;
+                case 2:
+                    time = (int)(distance / 15 * 60 * multiplier);
+                    break;
+                case 3:
+                    time = (int)(distance / 50 * 60 * multiplier);
+                    break;
             }
 
-
+            Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
             Console.ReadLine();
-
         }
 
         private static double GetDouble(string value)
