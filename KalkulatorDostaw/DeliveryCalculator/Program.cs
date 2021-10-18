@@ -11,13 +11,17 @@ namespace DeliveryCalculator
     {
         static int weather = 0;
         static int vehicle = 0;
-        static double distance = 0;
+        static double distance = -1.0;
         static int time = 0;
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Properties.Language.SetActualWeather);
-            Int32.TryParse(Console.ReadLine(), out weather);
+            do
+            {
+                Console.WriteLine(Properties.Language.SetActualWeather);
+                Int32.TryParse(Console.ReadLine(), out weather);
+            }
+            while (weather < 1 || weather > 3);
 
             do
             {
@@ -26,13 +30,12 @@ namespace DeliveryCalculator
             }
             while (vehicle < 1 || vehicle > 3);
 
-            if (vehicle < 1 || vehicle > 3)
+            do
             {
-                Console.WriteLine(Properties.Language.WrongVehicle);
+                Console.WriteLine(Properties.Language.SetDistance);
+                distance = GetDouble(Console.ReadLine());
             }
-
-            Console.WriteLine(Properties.Language.SetDistance);
-            Double.TryParse(Console.ReadLine(), out distance);
+            while (distance < 0 || distance > 10);
 
             if (weather == 1)
             {
@@ -70,26 +73,26 @@ namespace DeliveryCalculator
                 Console.WriteLine(Properties.Language.WrongWeather);
             }
 
-            double mnoznik = 1;
+            double multiplier = 1;
 
-            if (weather == 2) mnoznik = 1.5;
-            else if (weather == 3) mnoznik = 2.2;
+            if (weather == 2) multiplier = 1.5;
+            else if (weather == 3) multiplier = 2.2;
 
 
             if (vehicle == 3)
             {
-                time = (int)(distance / 50 * 60 * mnoznik);
-                Console.WriteLine(Properties.Language.EstimatedTime);
+                time = (int)(distance / 50 * 60 * multiplier);
+                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
             }
             else if (vehicle == 2)
             {
-                time = (int)(distance / 15 * 60 * mnoznik);
-                Console.WriteLine(Properties.Language.EstimatedTime);
+                time = (int)(distance / 15 * 60 * multiplier);
+                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
             }
             else if (vehicle == 1)
             {
-                time = (int)(distance / 5 * 60 * mnoznik);
-                Console.WriteLine(Properties.Language.EstimatedTime);
+                time = (int)(distance / 5 * 60 * multiplier);
+                Console.WriteLine(Properties.Language.EstimatedTime.Replace("{time}", time.ToString()));
             }
             else
             {
@@ -99,6 +102,23 @@ namespace DeliveryCalculator
 
             Console.ReadLine();
 
+        }
+
+        private static double GetDouble(string value)
+        {
+            double result;
+
+            //Current culture
+            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.CurrentCulture, out result) &&
+                //en-US culture
+                !double.TryParse(value, NumberStyles.Any, CultureInfo.GetCultureInfo("en-US"), out result) &&
+                //neutral culture
+                !double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            {
+                result = -1.0;
+            }
+
+            return result;
         }
     }
 }
